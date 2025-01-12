@@ -4,25 +4,29 @@ import useAxios from "../hooks/useAxios";
 function SearchBar() {
   const [searchValue, setSearchValue] = useState("");
   const { fetchData } = useAxios();
+
   // Call your API here
   const handleSearch = async () => {
     try {
-      const response = await fetchData({
+      const { response, statusCode } = await fetchData({
         method: "POST",
         url: "moods",
         options: {
-          data: {searchValue},
+          data: { searchValue },
           headers: {
             "Content-Type": "application/json",
           },
         },
-        auth:false
+        auth: false,
       });
-      console.log(response.data);
+      if (statusCode === 200) {
+        console.log(response.data);
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+
   const handleSearchClick = () => {
     if (searchValue === "") {
       alert("Please enter a search term");
