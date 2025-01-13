@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Greeting from './pages/Greeting';
 import Login from './pages/Login';
 import Callback from './pages/Callback'; 
+import Profile from './pages/Profile';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/callback" element={<Callback />} />
           <Route path="/player" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           {/* <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} /> */}
         </Routes>

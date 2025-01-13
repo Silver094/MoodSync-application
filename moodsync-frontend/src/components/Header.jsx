@@ -1,9 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { user } = useContext(AppContext);
+  const navigate=useNavigate();
   return (
     <div className="home_header d-flex align-items-center justify-content-between p-3 bg-dark">
       {/* Logo and moodSync */}
@@ -34,17 +36,16 @@ function Header() {
           {user?.display_name?.split(" ")[0] ?? "moodSync"}
         </button>
         <ul
-          className="dropdown-menu dropdown-menu-end"
+          className="dropdown-menu dropdown-menu-dark"
           aria-labelledby="profileDropdown"
         >
           <li>
-            <a className="dropdown-item" href="/profile">
+            <a className="dropdown-item" 
+            onClick={() => {
+              navigate("/profile");
+            }}
+            >
               Profile
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="/settings">
-              Settings
             </a>
           </li>
           <li>
