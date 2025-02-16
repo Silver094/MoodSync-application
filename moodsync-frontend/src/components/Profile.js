@@ -11,7 +11,7 @@ const Profile = () => {
   // Fetch the unified MoodSync profile from your backend
   const baseUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
-    fetch(baseUrl+"api/profile", {
+    fetch(baseUrl+"/api/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
