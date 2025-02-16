@@ -7,9 +7,10 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    // Also remove any stored Spotify token if you are storing it on the client
+    
     localStorage.removeItem('spotifyToken');
     navigate('/');
+    window.location.reload();
   };
 
   return (
