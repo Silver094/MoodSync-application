@@ -1,24 +1,22 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Greeting from './pages/Greeting';
-import Login from './pages/Login';
-import Callback from './pages/Callback'; 
-import Profile from './pages/Profile';
-// import About from './pages/About';
-// import Contact from './pages/Contact';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
+import Profile from './components/Profile';
+import Callback from './components/Callback'; // This handles the OAuth callback
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <Navbar />
+      <div className="container mt-4">
         <Routes>
-          <Route path="/" element={<Greeting />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/callback" element={<Callback />} />
-          <Route path="/player" element={<Home />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/spotify/callback" element={<Callback />} />
+          
+          {/* <Route path="*" element={<Navigate to="/" />} /> Redirect to "/" for any other route */}
         </Routes>
       </div>
     </Router>
