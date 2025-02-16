@@ -58,7 +58,7 @@ def create_app(config_class=Config):
         app.register_blueprint(profile_bp, url_prefix="/api")
 
     return app
-
+app = create_app() 
 
 if __name__ == '__main__':
     app = create_app()
