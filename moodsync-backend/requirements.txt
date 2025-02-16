@@ -3,4 +3,6 @@ Flask-PyMongo
 PyJWT
 Werkzeug
 textblob
+requests
 python-dotenv
+flask_cors 
